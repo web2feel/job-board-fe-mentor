@@ -1,0 +1,182 @@
+$cyan-50: hsl(180, 52%, 96%);
+$cyan-100: hsl(180, 31%, 95%);
+$cyan-300: hsl(180, 8%, 52%);
+$cyan-500: hsl(180, 29%, 50%);
+$cyan-800: hsl(180, 14%, 20%);
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: $cyan-50;
+  color:$cyan-300 ;
+  font-family: 'League Spartan', sans-serif;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.header{
+    min-height: 150px;
+    background-image: url("/images/bg-header-mobile.svg");
+    background-color: $cyan-500;
+}
+
+.container{
+  width:100%;
+  max-width: 1110px;
+  padding:0px 15px;
+  margin:0px auto;
+}
+
+.filter{
+  background: #fff;
+  padding: 20px 20px;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba($color: #000000, $alpha: 0.2);
+  margin-top:-30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filterTags{
+  display: flex;
+  gap:10px;
+  flex-wrap: wrap;
+}
+.filterTag{
+  background-color: $cyan-100;
+  border-radius: 3px;
+  display: flex;
+  overflow: hidden;
+  .tag{
+    padding:5px 10px;
+    color: $cyan-500;
+    font-size: 12px;
+  }
+  .remove{
+    background: $cyan-500;
+    display: grid;
+    place-items: center;
+    padding:0px 5px;
+    cursor: pointer;
+    &:hover{
+      background: $cyan-800;
+    }
+  }
+}
+.clearButton{
+  cursor: pointer;
+}
+
+.jobList{
+  padding: 50px 0px;
+  display: grid;
+  gap:40px;
+}
+
+.jobCard{
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 5px 5px rgba($color: #000000, $alpha: 0.2);
+  padding: 30px;
+ 
+}
+.featuredCard{
+  border-left: 5px solid $cyan-500;
+}
+.companyLogo{
+  margin-top:-50px;
+  img{
+    width: 50px;
+  }
+}
+
+.listingInfo{
+  display: grid;
+  grid-template-rows: repeat(3,1fr);
+  border-bottom: 1px solid $cyan-300;
+  padding:10px 0px;
+  gap:10px;
+  h2{
+    color: $cyan-800;
+    font-size: 18px;
+    cursor: pointer;
+    &:hover{
+      color:$cyan-500;
+    }
+  }
+}
+.listingTitle{
+  display:flex;
+  align-items: center;
+  gap:20px;
+  h3{
+    color: $cyan-500;
+    font-size: 16px;
+
+  }
+  .new, .featured{
+    background: $cyan-500;
+    color:#fff;
+    border-radius: 30px;
+    padding: 5px 10px 3px;
+    display: grid;
+    place-items: center;
+    font-size: 12px;
+  }
+  .featured{
+    background: $cyan-800;
+  }
+
+}
+.listingMeta{
+  display: flex;
+  gap:10px;
+}
+
+.listingTags{
+  display: flex;
+  gap:10px;
+  padding: 20px 0px 0px 0px;
+  flex-wrap: wrap;
+  span{
+    background: $cyan-100;
+    color:$cyan-500;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover{
+      background: $cyan-500;
+      color: #fff;
+    }
+  }
+}
+
+@media screen and (min-width:760px) {
+  .header{
+    background-image: url("/images/bg-header-desktop.svg");
+  }
+  .jobCard{
+    display: grid;
+    grid-template-columns: min-content 1fr auto;
+    gap:20px;
+    align-items: center;
+  }
+
+  .companyLogo{
+    margin-top:0px;
+    img{
+      width: auto;
+    }
+  }
+  .listingInfo{
+    border:none;
+  }
+  .listingTags{
+    padding: 0px 0px;
+  }
+}
